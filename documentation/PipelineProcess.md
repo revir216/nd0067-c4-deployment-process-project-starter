@@ -14,4 +14,4 @@
 
 ## Diagram
 
-[Pipeline Diagram](../ScreenShots/Architecture-diagram.jpg)
+![Pipeline Diagram](../ScreenShots/Architecture-diagram.jpg)
