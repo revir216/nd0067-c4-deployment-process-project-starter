@@ -18,32 +18,46 @@ The project will also include writing documentation and runbooks covering the op
 
 This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
 
+### Infrastructure
 
+- AWS S3 for storing front-end server
+
+- AWS Elastic Beanstalk for deploying the back-end application.
+
+- AWS RDS for database storage.
+
+- CircleCI for continuous integration and deployment.
+
+- AWS IAM for managing users and permissions.
+
+- Github for version control.
 
 ### Dependencies
 
 ```
-- Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
+- Node v14.15.1 (LTS) or more recent. 
 
-- npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
+- npm 6.14.8 (LTS) or more recent.
 
 - AWS CLI v2, v1 can work but was not tested for this project
 
-- A RDS database running Postgres.
+- AWS RDS for PostgreSQL database. Preferred version is 14.x.
 
-- A S3 bucket for hosting uploaded pictures.
+- AWS S3 bucket for hosting front-end files.
 
 ```
+### Pipeline Process
 
-### Installation
+- Create AWS S3 bucket.
+- Create AWS RDS database.
+- Test run application locally.
+- Configuring CircleCI config file `config.yml` is used to define the pipeline process. It is used to run the tests, and deploy the application to AWS Elastic Beanstalk.
+- Create a new repository on Github. Connect the CircleCI project to Github repository.
+- Configure environment variables in CircleCI settings.
+- Push the code to Github. CircleCI will automatically run the tests and deploy the application to AWS Elastic Beanstalk.
+- Check CI pipeline status in CircleCI dashboard. Check log for any errors or warnings.
+- The application is now deployed to AWS Elastic Beanstalk. Check again in AWS Elastic Beanstalk to see the deployed application.
 
-Provision the necessary AWS services needed for running the application:
-
-1. In AWS, provision a publicly available RDS database running Postgres. <Place holder for link to classroom article>
-1. In AWS, provision a s3 bucket for hosting the uploaded files. <Place holder for tlink to classroom article>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
 
 ## Testing
 
